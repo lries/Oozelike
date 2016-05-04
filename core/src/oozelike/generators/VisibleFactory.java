@@ -73,6 +73,14 @@ public class VisibleFactory {
 		return new Visible(get("actors/green_ooze.png"), "actors/green_ooze.png");
 	}
 
+	/****************************************************
+	 * Get a chompy graphic - loads if it's needed 
+	 * @return a chompy graphic
+	 ****************************************************/
+	public Visible getChompy() {
+		return new Visible(get("actors/chompy.png"), "actors/chompy.png");
+	}
+
 	/***************************************************
 	 * Get a texture - loads it if it isn't yet loaded
 	 * @param s the file location of the texture

@@ -129,4 +129,8 @@ public class PlayerAI extends AI {
 	public boolean isAggressiveTo(Actor a) {
 		return a != null;
 	}
+	
+	public boolean isPlayer() { 
+		return true; 
+	}
 }

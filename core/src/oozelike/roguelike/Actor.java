@@ -239,4 +239,13 @@ public class Actor implements Serializable {
 	public boolean isDead() {
 		return combatManager.isDead();
 	}
+
+	/*************************************************************
+	 * Check if this is a member of the player faction
+	 * (This is true for player summons as well - but not NPCs!)
+	 * @return whether they are player faction
+	 *************************************************************/
+	public boolean isPlayer() {
+		return ai.isPlayer();
+	}
 }

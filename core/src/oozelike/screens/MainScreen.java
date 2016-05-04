@@ -95,6 +95,10 @@ public class MainScreen implements Screen {
 			Actor ooze = ActorFactory.getOoze(); 
 			w.activeDungeon().randomlyAddActor(ooze); 
 		}
+		for (int x=0; x<20; x++){
+			Actor chompy = ActorFactory.getChompy();
+			w.activeDungeon().randomlyAddActor(chompy);
+		}
 		SaveLoadManager.save(w);
 		Core.game.setScreen(new DungeonExploreScreen(w));
 	}

@@ -129,7 +129,7 @@ public class AI implements Serializable{
 		if (dx+holder.getX() >= holder.getDungeon().getWidth() || dx+holder.getX() < 0) return false; 
 		if (dy+holder.getY() >= holder.getDungeon().getHeight() || dy+holder.getY() < 0) return false; 
 		else if (holder.getDungeon().addActor(holder.getX()+dx, holder.getY()+dy, holder, false)) return true;
-		if (isAggressiveTo(holder.getDungeon().getActor(holder.getX()+dx, holder.getY()+dy))){
+		if (holder.getDungeon().getActor(holder.getX()+dx, holder.getY()+dy)!=null && isAggressiveTo(holder.getDungeon().getActor(holder.getX()+dx, holder.getY()+dy))){
 			holder.getCombatManger().makeBasicAttack(holder.getDungeon().getActor(holder.getX()+dx, holder.getY()+dy).getCombatManger());
 			return true; 
 		}
@@ -217,5 +217,12 @@ public class AI implements Serializable{
 		if (noActorsPath == null || noActorsPath.isEmpty()) return false; 
 		goTo(noActorsPath.get(0)[0], noActorsPath.get(0)[1]);
 		return true; 
+	}
+	
+	/*******************************************************
+	 * Check if this is the player
+	 *******************************************************/
+	public boolean isPlayer(){
+		return false; 
 	}
 }
